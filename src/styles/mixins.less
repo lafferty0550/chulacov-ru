@@ -1,0 +1,10 @@
+.flex(@flex: flex, @direction: row, @justify: flex-start, @align: flex-start) {
+  display: @flex;
+  flex-direction: @direction;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+.flex-center() {
+  .flex(@justify: center, @align: center);
+}

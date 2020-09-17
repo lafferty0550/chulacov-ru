@@ -1,0 +1,49 @@
+html {
+  font-size: 10px;
+  background-color: #101114;
+  font-family: 'OpenSans', sans-serif;
+  font-weight: 700;
+
+  @media @1000 {
+    font-size: 8px;
+  }
+
+  @media @768 {
+    font-size: 9px;
+  }
+
+  @media @480 {
+    font-size: 10px;
+  }
+
+  @media @320 {
+    font-size: 8px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+input, select {
+  outline: none;
+  border-radius: .5rem;
+  border: 1px solid lightgray;
+  padding: .5rem 1rem;
+  transition: .2s;
+
+  &:focus {
+    border: 1px solid gray;
+  }
+}

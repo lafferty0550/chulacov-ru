@@ -1,0 +1,353 @@
+@import './vars';
+@import './mixins';
+@import './fonts';
+@import './global';
+
+.container {
+  .flex();
+  margin: 0 auto;
+  width: fit-content;
+
+  @media @768 {
+    .flex(@direction: column);
+    width: 100%;
+  }
+}
+
+// ========================SIDEBAR START
+.sidebar {
+  background-color: #1F2228;
+  height: 54rem;
+  width: 32rem;
+  font-size: 1.8rem;
+
+  @media @768 {
+    width: 100%;
+  }
+
+  &__logo {
+    .flex(@align: center);
+    height: 16.3rem;
+    padding-left: 3rem;
+
+    @media @768 {
+      padding-left: 5rem;
+    }
+  }
+
+  &__item {
+    transition: .2s;
+
+    > a {
+      color: white;
+      display: block;
+      padding: 2.8rem 0 2.7rem 3rem;
+
+      @media @768 {
+        padding-left: 5rem;
+      }
+    }
+
+    &:hover {
+      background-color: #2A2D37;
+    }
+
+    &_active {
+      background-color: #2A2D37;
+
+      > a {
+        color: #808592;
+      }
+    }
+
+    &_disabled {
+      background-color: #191C24;
+
+      > a {
+        color: #808592;
+      }
+    }
+  }
+}
+
+// ============================SIDEBAR END
+
+
+// ============================CONTENT START
+.content {
+  width: 64rem;
+
+  @media @768 {
+    width: 100%;
+  }
+
+  &__header {
+    background-color: #00AEEF;
+    height: 16.3rem;
+    padding: 5.2rem 14rem 0 2.8rem;
+
+    @media @768 {
+      text-align: center;
+      padding: 5.2rem 2.8rem;
+      height: fit-content;
+    }
+  }
+
+  &__title {
+    font-size: 3.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  &__subtitle {
+    font-size: 1.4rem;
+  }
+
+  &__auth {
+
+  }
+
+  &__footer {
+    height: 26.4rem;
+    background-color: #373C43;
+    padding: 2.7rem 4.5rem 3.3rem 3rem;
+    color: white;
+    font-size: 1.2rem;
+
+    @media @768 {
+      height: fit-content;
+      padding: 2.7rem 2rem;
+    }
+
+    > div {
+      margin-bottom: 1em;
+      line-height: 1.3em;
+    }
+  }
+}
+
+// ==================================CONTENT END
+
+
+// ==================================AUTH START
+.auth {
+  height: 57rem;
+  background-color: #F7F8F8;
+  font-size: 1.6rem;
+  padding: 4.7rem 0 3rem 3.1rem;
+
+  @media @768 {
+    .flex(@direction: column, @align: center);
+    padding: 4.7rem 0;
+  }
+
+  @media @480 {
+    height: fit-content;
+  }
+
+  &__info {
+    color: #8494AB;
+    margin-bottom: 3rem;
+
+    &-title {
+      margin-bottom: 2.3rem;
+    }
+
+    &-item {
+      .flex();
+      margin-bottom: 1.1rem;
+
+      > span:first-child {
+        display: block;
+        width: 16rem;
+      }
+
+      > span:last-child {
+        color: black;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 1.9rem;
+    margin-bottom: 2rem;
+  }
+
+  &__form {
+    position: relative;
+    height: 26rem;
+    margin-bottom: 1.4rem;
+
+    @media @768 {
+      width: 100%;
+    }
+
+    @media @480 {
+      .flex(@direction: column, @align: center);
+      height: fit-content;
+    }
+  }
+
+  &__front-card {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+
+    @media @768 {
+      left: 50%;
+      transform: translateX(-75%);
+    }
+
+    @media @480 {
+      position: static;
+      transform: none;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__back-card {
+    position: absolute;
+    z-index: 1;
+    right: 4.3rem;
+    top: 2rem;
+
+    @media @768 {
+      right: 50%;
+      transform: translateX(75%);
+    }
+
+    @media @480 {
+      position: static;
+      transform: none;
+    }
+  }
+
+  &__actions {
+    font-size: 1.4rem;
+  }
+}
+
+// ====================================AUTH END
+
+
+// ====================================CARD START
+.card {
+  background-color: #F7F8F8;
+  padding: 2.5rem 1.5rem;
+  border: 1px solid #e3e9ed;
+  border-radius: 1rem;
+  width: 35rem;
+  height: 24rem;
+
+  @media @480 {
+    width: 100%;
+  }
+
+  &_back {
+    .flex(@direction: column, @align: flex-end);
+  }
+
+  &__CVV {
+    > input {
+      width: 14rem;
+      height: 4.3rem;
+    }
+  }
+
+  &__streak {
+    background-color: #E4E9EE;
+    width: 100%;
+    height: 4.3rem;
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    width: 100%;
+
+    &-title {
+      color: #8494AB;
+      margin-bottom: .6rem;
+    }
+
+    &-wrapper {
+      .flex();
+    }
+  }
+
+  &__number {
+    margin-bottom: 1.7rem;
+
+    & input {
+      width: 6.6rem;
+      height: 4.3rem;
+      margin-right: 1rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @media @480 {
+        width: 100%;
+      }
+    }
+  }
+
+  &__validity {
+    margin-bottom: 1rem;
+
+    &-month {
+      width: 7rem;
+      height: 4.3rem;
+      margin-right: 1rem;
+
+      @media @480 {
+        width: 100%;
+      }
+    }
+
+    &-year {
+      width: 8.7rem;
+      height: 4.3rem;
+
+      @media @480 {
+        width: 100%;
+      }
+    }
+  }
+
+  &__owner {
+    width: 100%;
+    height: 4.3rem;
+  }
+}
+
+// ==========================================CARD END
+
+
+.button {
+  .flex-center();
+  width: 17.5rem;
+  height: 4rem;
+  border-radius: .5rem;
+  transition: .2s;
+  background-color: lightgray;
+  pointer-events: none;
+
+  &:hover {
+    background-color: #84AE00;
+  }
+
+  &_submit {
+    background-color: #95BF00;
+    color: white;
+    cursor: pointer;
+    pointer-events: all;
+  }
+}
+
+
+.logo {
+  > img {
+    cursor: pointer;
+  }
+}
